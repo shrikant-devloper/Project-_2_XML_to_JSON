@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body style="text-align: center">
+	<h1>Upload Your XML File</h1>
+	<form action="upload" method="post" enctype="multipart/form-data">
+		<input type="file" name="file" accept=".xml" required="required">
+		<button type="submit">Upload</button>
+
+		<p th:if="${message}" th:text="${message}" style="color: green;"></p>
+		<p th:if="${error}" th:text="${error}" style="color: red;"></p>
+		<p th:if="${jsonPath}">
+			JSON file saved at: <b th:text="${jsonPath}"></b>
+		</p>
+	</form>
+</body>
+</html>
